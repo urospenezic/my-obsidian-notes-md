@@ -7,3 +7,12 @@ Inside of cshtml.cs is OnGet method - that responds to HTTP GET requests. So we 
 Any property that cshtml.cs class has can be accessed in the view via @Model
 
 
+We switch from HTML to C# via @, like: 
+<tbody>
+	@foreach(var stuff in stuffCollection){
+		<tr>
+			<td>@stuff.Name</td>
+		</tr>
+	}
+</tbody>
+
