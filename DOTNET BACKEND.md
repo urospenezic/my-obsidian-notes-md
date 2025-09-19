@@ -1,27 +1,27 @@
-# Backend Development Roadmap for .NET Real-Time Financial Systems
+# Revised Backend Development Roadmap for .NET Real-Time Financial Systems
 
-As a WPF developer moving to backend development for financial real-time applications, you'll need to focus on performance, scalability, and reliability. Here's a comprehensive roadmap:
+Here's your updated roadmap with working links for the performance sections:
 
 ## 1. Core .NET Backend Fundamentals
 
 - **.NET 6/7/8**: Learn the latest features and performance improvements
   - [.NET Documentation](https://learn.microsoft.com/en-us/dotnet/)
-  - [Performance improvements in .NET](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-8/)
+  - [What's new in .NET](https://learn.microsoft.com/en-us/dotnet/core/whats-new/)
 
 - **Background Services**: For long-running processes
   - [Worker Services in .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/workers)
 
 ## 2. High-Performance C#
 
--**Performance Best Practices**:
-
-- [.NET Performance Tips](vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/code/electron-browser/workbench/workbench.html)
+- **Memory Management**: Understanding the stack vs heap, value vs reference types
+  - [Write safe and efficient C#](https://learn.microsoft.com/en-us/dotnet/csharp/write-safe-efficient-code)
+  - [Microsoft DevBlog: Performance Posts](https://devblogs.microsoft.com/dotnet/tag/performance/)
 
 - **Span<T> and Memory<T>**: For zero-allocation operations
-  - [Memory and Spans](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/)
+  - [Memory and Spans Usage Guidelines](https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/memory-t-usage-guidelines)
 
 - **System.Threading.Channels**: For producer/consumer scenarios
-  - [Using Channels in .NET](https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/)
+  - [An Introduction to System.Threading.Channels](https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/)
 
 ## 3. Real-Time Communication
 
@@ -62,7 +62,7 @@ As a WPF developer moving to backend development for financial real-time applica
 ## 7. Concurrency and Parallelism
 
 - **Task Parallel Library**: Async/await, Task, ValueTask
-  - [Async Programming](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-parallel-library-tpl)
+  - [Async Programming](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming/)
 
 - **Thread Synchronization**: For shared resource access
   - [Synchronization Primitives](https://learn.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives)
@@ -76,7 +76,7 @@ As a WPF developer moving to backend development for financial real-time applica
 ## 9. Microservices Architecture
 
 - **Service Communication**: Inter-service communication patterns
-  - [.NET Microservices: Architecture for Containerized .NET Applications](https://dotnet.microsoft.com/download/e-book/microservices-architecture/pdf)
+  - [.NET Microservices Architecture Guide](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/)
 
 - **Service Mesh**: Istio, Linkerd
   - [Istio Documentation](https://istio.io/latest/docs/)
@@ -87,7 +87,16 @@ As a WPF developer moving to backend development for financial real-time applica
   - [OpenTelemetry in .NET](https://opentelemetry.io/docs/instrumentation/net/)
   - [Prometheus for .NET](https://github.com/prometheus-net/prometheus-net)
 
-## 11. Financial Domain Knowledge
+## 11. Performance Analysis and Benchmarking
+
+- **BenchmarkDotNet**: For accurate performance testing
+  - [BenchmarkDotNet Documentation](https://benchmarkdotnet.org/articles/overview.html)
+
+- **Profiling Tools**:
+  - [Visual Studio Profiler](https://learn.microsoft.com/en-us/visualstudio/profiling/)
+  - [dotTrace](https://www.jetbrains.com/profiler/)
+
+## 12. Financial Domain Knowledge
 
 - **Market Data Concepts**: Order books, tick data, OHLC
   - [Market Data Explained](https://www.investopedia.com/terms/m/market-data.asp)
@@ -95,10 +104,10 @@ As a WPF developer moving to backend development for financial real-time applica
 - **Financial Protocols**: FIX Protocol for trading
   - [QuickFIX/n](https://github.com/connamara/quickfixn)
 
-## 12. Recommended Books
+## 13. Recommended Books and Courses
 
-- "High-Performance .NET Code" by Ben Watson
-- "Building Microservices" by Sam Newman
-- "C# in Depth" by Jon Skeet
+- "Pro .NET Benchmarking" by Andrey Akinshin
+- "Concurrency in C# Cookbook" by Stephen Cleary
+- "System Design Interview" by Alex Xu (helpful for understanding large-scale systems)
 
-Focus on performance optimization techniques, understanding memory management, and mastering asynchronous programming—these will be crucial for building high-performance financial systems.
+Focus particularly on asynchronous programming patterns, memory optimization, and understanding the performance characteristics of the .NET runtime—these will be crucial skills for building high-frequency trading systems and real-time financial analytics.
