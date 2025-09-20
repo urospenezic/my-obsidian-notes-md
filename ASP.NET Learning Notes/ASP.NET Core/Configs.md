@@ -2,5 +2,7 @@ appsettings.json: anything we place here can be accessed globally, including ins
 
 In Program.cs we do configuration of data sources and services. Take a look at 'Add services to the container' part. Here we can specify a singleton data source as a service by doing builder.Services.AddSingleton<IRepository, RepositoryImpl>();
 
+Or for db context and EF Core use AddScoped instead of singleton
+
 
 
