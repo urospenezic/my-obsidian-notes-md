@@ -4,5 +4,8 @@ In Program.cs we do configuration of data sources and services. Take a look at '
 
 Or for db context and EF Core use AddScoped instead of singleton
 
+lauchSettings.json defines environments. iisSettings is for launching from VS, "ProjectName" settings are for launching from command line.
+
+appSettings.json is used to configure logging levels for example
 
 
