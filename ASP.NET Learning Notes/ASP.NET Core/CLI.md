@@ -36,3 +36,15 @@ Breakdown of commands:
 - `-udl` - Use default layout
 - `-outDir  - Output directory for generated pages
 - `--referenceScriptLibraries` - Include validation scripts
+
+--------------------------------
+
+**WebAPI
+
+dotnet new webapi to generate an api template. -h for help. -controllers or --use-controllers to enable controllers instead of minimal api 
+
+dotnet new sln - create a solution
+dotnet new webapi -controllers (--use-controllers is viable, but it produces a slightly diff result without the controllers folder)
+
+add controllers to the sln:
+dotnet sln add pathToProject
