@@ -3,3 +3,5 @@
 
 [HttpGet(Name="GetRequestName")] -> self explanatory
 
+[HttpGet("{id}")] // localhost:5000/api/controllerName/id
+

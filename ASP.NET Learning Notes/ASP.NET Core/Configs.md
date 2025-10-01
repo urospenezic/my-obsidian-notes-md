@@ -17,3 +17,5 @@ appSettings.json is used to configure logging levels for example
 
 **in the csproj in vs code there's <ImplicitUsings> statement so that we dont need that much using boilerplate code (so using System is no longer needed, which is nice)
 
+<nullable> statement in the csproj will force nullable statements even to ref types. If we wanna use nullable, use string?, if not set the prop to required
+

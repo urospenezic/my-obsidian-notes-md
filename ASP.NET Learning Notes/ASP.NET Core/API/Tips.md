@@ -5,4 +5,6 @@ When starting development of api, change the appsettings.Developmnet.json loggin
 
 when removing http project config from launchSettings, check dotnet dev-certs https --check. ##that will tell us whether or not the cert is working
 
+**add appsettings or any config file that might have public API keys into git ignore for the love of god
+
 
