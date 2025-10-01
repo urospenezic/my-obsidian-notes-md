@@ -36,9 +36,9 @@ Breakdown of commands:
 - `-udl` - Use default layout
 - `-outDir  - Output directory for generated pages
 - `--referenceScriptLibraries` - Include validation scripts
-
+-------------------------
+dotnet publish -> for publishing
 --------------------------------
-
 **WebAPI
 
 dotnet new webapi to generate an api template. -h for help. -controllers or --use-controllers to enable controllers instead of minimal api 
