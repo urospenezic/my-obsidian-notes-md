@@ -25,5 +25,7 @@
 
 **Log File Hihglighter -> formats the terminal/output colors
 
+**Tailwind CSS IntelliSense -> offers a proper intellisense for styling
+
 
 OPTIONAL: Angular Essentials by John papa
