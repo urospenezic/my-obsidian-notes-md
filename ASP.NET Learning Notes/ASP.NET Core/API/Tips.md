@@ -8,3 +8,5 @@ when removing http project config from launchSettings, check dotnet dev-certs ht
 **add appsettings or any config file that might have public API keys into git ignore for the love of god
 
 
+**EF has issues with string comparison in a sense that AnyAsync(x=> x.Email.ToLower() == email.ToLower()) works, but x=> String.Compare(x.Email, email, StringComparison.OrdinalIgnoreCase) does not.
+
