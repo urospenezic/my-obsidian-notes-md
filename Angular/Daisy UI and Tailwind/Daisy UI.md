@@ -21,4 +21,3 @@ Daisy UI and Tailwind will also auto adjust color scheme based off of dark/light
 
 
 
-
