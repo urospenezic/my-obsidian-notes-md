@@ -6,9 +6,9 @@
 - bg-colorName -> sets background color to green for example
 - bg-base-100 - white text with 100 
 - fixed -> fixes the element at position -> useful for footer/headers/nav bars
-- w-1/2 -> half of screen (centered on screen) w-full for whole width of the page
+- w-1/2 -> half of screen (centered on screen) w-full to fill available width!!!!
 - mx-auto -> auto margins left and right
-- p-10 -> spacing of 2.5rem
+- p- -> spacing of 2.5rem (padding). py- (spacing tob and bottom) p-10 (10 spacing everywhere) etc
 - mt-10 -> margin
 - shadow-xl -> add a shadow
 - list -> daisy ui list, used on UL for example
@@ -22,6 +22,14 @@
 - text- -> text manipulation
 - uppercase
 - ml - margin left. **MARGIN HAS AUTO, so ml-auto is auto left margin
+- ** HERO ** -> homepage class for main div by daisy
+- min-h -> min height (min-h-screen == full sreen)
+- btn (button stuff). btn-primary, btn-ghost, btn-lg(large) etc
+- justify -> children spacing and allignment
+
+`color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
+
+card bg-base-100 w-1/2 mx-auto flex flex-col p-6 rounded-lg shadow-lg -> card with theme dependent bg color, width half of screen, auto margins, children vertically aligned (flex-col), padding of 6, rounded on the edges, large shadow. JEEEZ
 
 example for nav bar: 
 <header class="p-3 w-full fixed top-0 z-50 bg-gradient-to-r from-primary to-black">
