@@ -127,9 +127,86 @@ To use this we inject ToastService and go like this.toastService.error('message'
 Route Guards
 --
 
-ng g guard [name]  ->  Creates a new route guard in your project. Route guards are used to control access to parts of your    application by checking certain conditions before a route is activated. This schematic generates a new guard with the specified name, type, and options.       
+ng g g[name]  ->  Creates a new route guard in your project. Route guards are used to control access to parts of your    application by checking certain conditions before a route is activated. This schematic generates a new guard with the specified name, type, and options.      
+
+CLI will ask us to select which action to guard from
+
+Guards moved away from OOP to more of a functional programming, so all guards are now essentially funcions
+
+**Do not forget that we can inject into functions as well in angular!!!!
+
+To add a route guard to a route, got to wherever the route is specified and add canDoSomething (DoSomething is replaces by Activate, ActivateChild, Match...) and add a array of guards like: canActivate=[authGuard]
+**to avoid copy pasting the same guard to multiple routes, consider creating dummy routes that contain those routes as children (but do not alter the URL navigation links):
+
+`export const routes: Routes = [`
+`{ path: '', component: Home },`
+`{`
+`path: '',`
+`canActivateChild: [authGuard],`
+`children: [`
+`{ path: 'members', component: MemberList },`
+`{ path: 'members/:id', component: MemberDetail },`
+`{ path: 'lists', component: Lists },`
+`{ path: 'messages', component: Messages },`
+`],`
+`},`
+`{ path: '**', component: Home },`
+`];`
 
 
+OR:
+
+`export const routes: Routes = [`
+`{ path: '', component: Home },`
+`{`
+`path: '',`
+`runGuardsAndResolvers: 'always',`
+`canActivate: [authGuard],`
+`children: [`
+`{ path: 'members', component: MemberList },`
+`{ path: 'members/:id', component: MemberDetail },`
+`{ path: 'lists', component: Lists },`
+`{ path: 'messages', component: Messages },`
+`],`
+`},`
+`{ path: '**', component: Home },`
+`];`
 
 
+**APP INITIALIZATION
+--
 
+A mechanism for loading up things before route guards and other stuff happens. So if anything has to be initialized before the app starts rendering stuff:
+
+`export class InitService {`
+`private readonly accountService = inject(AccountService);`
+`init() {`
+`const user = localStorage.getItem('user');`
+`if (user) {`
+`this.accountService.setCurrentUser(JSON.parse(user));`
+`}`
+`return of(true);`
+`}`
+
+**WE CAN THEN USE THIS IS app.config.ts by adding a new provider (READ MORE ABOUT PROVIDERS IN ANGULAR COURSE PROJECTS):
+
+`provideAppInitializer(async () => {`
+	`const initService = new InitService();`
+	`try {`
+		`await lastValueFrom(initService.init());`
+	`} catch (error) {`
+		`console.error('Error during app initialization:', error);`
+	`} finally {`
+		`const splash = document.getElementById('initial-splash');`
+		`if (splash) {`
+			`splash.remove();`
+		`}`
+	`}`
+`}),`
+
+So we can fetch some data like configs for the app from the server. In Index.html we generate a 'initial-splash' div or whatever, a spinning thing. That will be showing until we fetch everything that the app needs in order to function. After the initializing service returns data, angular will auto display <app-root>. So in index we'll have like `<spinningStuff/>` and below that `<app-root/>`
+
+**Route animations
+--
+
+change the provideRouter provider to have withViewTransitions. That thing is customizible, but by default gives a fading animation. so provideRouter(routes, withViewTransitions() )
