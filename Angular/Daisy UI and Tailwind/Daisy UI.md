@@ -15,6 +15,10 @@ There are extensions for styling libraries to offer intellisense. Check vs code 
 Daisy UI and Tailwind will also auto adjust color scheme based off of dark/light theme of browser without touching any colors.
 
 
+**DAISY UI HAS A THEME GENERATOR???? daisyui.com/theme-generator
+
+
+
 
 
 

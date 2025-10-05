@@ -26,6 +26,7 @@
 - min-h -> min height (min-h-screen == full sreen)
 - btn (button stuff). btn-primary, btn-ghost, btn-lg(large) etc
 - justify -> children spacing and allignment
+- text-accent
 
 `color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
 
