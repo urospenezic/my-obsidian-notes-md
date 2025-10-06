@@ -23,7 +23,8 @@ Example of error catching interceptor:
 						`break;`
 					`case 500:`
 						`console.error(error);`
-						`toast.error('Server error');`
+						`const navigationExtras = { state: { error: error.error } };`
+						`router.navigateByUrl('/server-error', navigationExtras);`
 						`break;`
 					`default:`
 						`console.error(error);`

@@ -52,6 +52,10 @@ In any component that needs to redirect at some point -> import a Router. Then s
 
 **WE CAN USE THIS INSIDE OF INTERCEPTORS
 
+If state is passed to a route, we can access it in components constructor:
+const navigation = this.router.currentNavigation();
+this.error.set(navigation?.extras?.state?.['key']);
+
 -----------------------------------------
 
 **Adding toasts

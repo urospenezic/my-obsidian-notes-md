@@ -1,3 +1,4 @@
+**INSTALL ANGULAR DEV TOOLS BROWSER EXTENSION
 
 99% of angular notes can be found in comments under angular project in course-projects repo
 
