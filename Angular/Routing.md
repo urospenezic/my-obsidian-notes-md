@@ -50,6 +50,8 @@ Routing in code behind
 
 In any component that needs to redirect at some point -> import a Router. Then simply do a this.router.navigateByUrl('relativePath');
 
+**WE CAN USE THIS INSIDE OF INTERCEPTORS
+
 -----------------------------------------
 
 **Adding toasts
@@ -210,3 +212,18 @@ So we can fetch some data like configs for the app from the server. In Index.htm
 --
 
 change the provideRouter provider to have withViewTransitions. That thing is customizible, but by default gives a fading animation. so provideRouter(routes, withViewTransitions() )
+
+
+**ROUTES FROM HTML:
+
+<button routerLink="/someRoute"/>
+
+OR WE CAN inject(Location) which contains routing history:
+
+private location = inject(Location);
+
+goBack() {
+this.location.back();
+}
+
+and just use that on click
