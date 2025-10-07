@@ -10,3 +10,5 @@ The db is created code first -> we write our classes as models and EF generates 
 So if i add a new property to my model class, i can run dotnet migrations add 'commit message' and then dotnet ef database update to create a db
 
 dotnet ef database update --startup-project ../../ProjectReferencePath -> useful in case of models being in a separate project
+
+**dotnet ef migrations has-pending-model-changes -> check if your entity changes have broken a db and require a new migration
