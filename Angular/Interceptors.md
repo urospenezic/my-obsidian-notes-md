@@ -1,0 +1,2 @@
+
+Used to modify the request as it's coming in or going out. Any request. Useful for persistant things that have to happen for each request, like tokens or error handling. Check course project/DatingApp. Inside of that there is a client/src/interceptors folder. Also check angular project for the same stuff.

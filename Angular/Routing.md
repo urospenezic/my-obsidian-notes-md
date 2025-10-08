@@ -231,3 +231,10 @@ this.location.back();
 }
 
 and just use that on click
+
+---------------------------------------------------------
+
+**We can inject(ActivtedRoute) for the route info in code behind of active navigation, like route.shapshots.paramMap.get('key') property which has value that is picked up by url (like users/4 -> get('id') it will contain 4)
+
+
+**ROUTERLINKACTIVE in HTML binds to a css class that will activate if the specified route is active. Ofc required routerLink=path as well

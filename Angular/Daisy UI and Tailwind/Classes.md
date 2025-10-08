@@ -27,6 +27,11 @@
 - btn (button stuff). btn-primary, btn-ghost, btn-lg(large) etc
 - justify -> children spacing and allignment
 - text-accent
+- h -> height, can be h-full for all the space, h-20 for specific, h-[85vh] for 85% of viewport size etc
+- object-cover - expands the image/item to available space of the container\
+- divider - added to no content div to give us a separator
+- menu
+- rounded box
 
 `color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
 
@@ -105,3 +110,5 @@ example for nav bar:
 
 Looks absolutely stunning in angular :)
 
+Animations:
+transition-all duration-300 ease-in-out transform hover:-translate-y-2- lots of stuff, check documentation i guess. this one moves the div up on mouseover

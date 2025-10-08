@@ -1,5 +1,7 @@
 **INSTALL ANGULAR DEV TOOLS BROWSER EXTENSION
 
+**NG G ENVIRONMENTS -> generates a file to specify different env variables like default api urls. This generate 2 config files: environment and environment.development, similar to asp.net. WHEN IMPORTING ENVIRONEMENT TO COMPONENTS - MAKE SURE NOT TO SELECT DEVELOPMENT FILE - ALWAYS TAKE ENVIRONMENT.CS
+
 99% of angular notes can be found in comments under angular project in course-projects repo
 
 with angular 20, zoneless angular is finally the default. so signals EEEVERYWHERE LETS GO
