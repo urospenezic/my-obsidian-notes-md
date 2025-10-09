@@ -17,6 +17,30 @@ Daisy UI and Tailwind will also auto adjust color scheme based off of dark/light
 
 **DAISY UI HAS A THEME GENERATOR???? daisyui.com/theme-generator
 
+---------
+Themes
+--
+
+To add a theme:
+handleSelectTheme(theme: string) {
+this.selectedTheme.set(theme);
+localStorage.setItem('theme', theme);
+document.documentElement.setAttribute('data-theme', theme);
+//hide menu after selection
+var elem = document.activeElement as HTMLDivElement;
+if (elem) {
+elem.blur();
+}
+}
+
+it's that easy, just store some string array of available theme names somewhere. https://daisyui.com/docs/themes/?lang=en
+
+!!Add:
+@plugin "daisyui" {
+themes: all;
+}
+in styles.css
+
 
 
 

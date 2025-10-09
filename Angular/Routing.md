@@ -42,6 +42,8 @@ To set up a route, we can add an attribute to an anchor like: `<a routerLink = "
 
 **routerLinkActive is a directive to specify a css class when a certain anchor for a route is active. so routerLinkActive="text-accent" for example
 
+**we also have routerLinkOptions like: [routerLinkActiveOptions]="{ exact: true }". read docs. this one for example will not apply routerLinkActive styles if the URL is of children, but only on exact full URL (meaning app/members will get highlighted, but app/members/member-id will not trigger highlight on members nav link)
+
 
 -----------------------------------------
 
