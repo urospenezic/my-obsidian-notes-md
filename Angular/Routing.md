@@ -180,6 +180,8 @@ OR:
 `{ path: '**', component: Home },`
 `];`
 
+**canDeactivate route guard is usefull for not allowing users to accidently load a component whilst some form has unsaved changes
+
 
 **APP INITIALIZATION
 --

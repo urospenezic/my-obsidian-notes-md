@@ -18,5 +18,11 @@ And just keep inheriting like this as deep as needed
 --
 
 same shit, just use output<T>. output has the emit() method that notifies the parent binding to it. binding for output in parent doesn't use squared brackets, but parethesis: (childOutputName)="parentMethod($event)". Make sure that if binding to a method, that method accepts a parameter of the same type as output, because it will be auto passed in.
+
+**HOST LISTENER (@HostListener) => used to hook up to browser events. can be very useful, seen it used to confirm leaving with dirty form by clicking on tab kill or home button (@HostListener('window:beforeunload', [$event]) notify($event:BeforeUnloadEvent){
+if (this.editForm?.dirty) {
+$event.preventDefault();
+}
+})
    
    

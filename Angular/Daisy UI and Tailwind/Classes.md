@@ -25,7 +25,7 @@
 - ** HERO ** -> homepage class for main div by daisy
 - min-h -> min height (min-h-screen == full sreen)
 - btn (button stuff). btn-primary, btn-ghost, btn-lg(large) etc
-- justify -> children spacing and allignment
+- justify -> children spacing and allignment (justify-center for center, justify-between -> one left one right with spacingz)
 - text-accent
 - h -> height, can be h-full for all the space, h-20 for specific, h-[85vh] for 85% of viewport size etc
 - object-cover - expands the image/item to available space of the container\
@@ -34,6 +34,7 @@
 - rounded box
 - auto-rows
 - overflow-auto
+- self- -> self positioning (self-end -> end of flex row/column)
 
 `color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
 

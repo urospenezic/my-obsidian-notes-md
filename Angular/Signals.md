@@ -7,3 +7,5 @@ now the UI will do fine grained change detection. So any time this signal value 
 
 We set the value of signal via signalProp.set() or update()
 Signals are a replacement for observables tracking non async proccesses
+
+**computed() is a signal that's based off of another signal
