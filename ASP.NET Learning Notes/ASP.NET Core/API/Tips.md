@@ -10,3 +10,4 @@ when removing http project config from launchSettings, check dotnet dev-certs ht
 
 **EF has issues with string comparison in a sense that AnyAsync(x=> x.Email.ToLower() == email.ToLower()) works, but x=> String.Compare(x.Email, email, StringComparison.OrdinalIgnoreCase) does not.
 
+**FindAsync() in EF Core does not work with Include(). FindAsync is the most efficient find in db because it uses primary key, so use SingleOrDefaultAsync()

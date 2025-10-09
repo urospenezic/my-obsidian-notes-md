@@ -86,7 +86,7 @@ TokenKey lives inside of config appsettings like: "TokenKey": "super secret key 
 Read about SymmetricSecurityKey. It uses the same object to encrypt and decrypt. We also got Asymmetric one which is mostly used for certificates.
 
 
-**CLAIMS are info we know about the user using the token. So a claim like an email, nameidentifier. ClaimTypes are predefined, we can define custom claim types by doing: new Claim("customWhatever", "customThing")
+**CLAIMS are info we know about the user using the token. So a claim like an email, nameidentifier. ClaimTypes are predefined, we can define custom claim types by doing: new Claim("customWhatever", "customThing"). Once we have a token for a User, we have this User global property we can access inside our controllers like User.FindFirstValue(ClaimTypes.NameIdentifier) to get id. we set those up in token service.
 
 
 

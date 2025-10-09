@@ -14,6 +14,8 @@ They use # to assign names to elements which are then usable in code behind. <fo
 
  #emailCtl="ngModel" is syntax supported by ngModel directive that tells angular that we wanna store this control created by angular into a variable called emailCtl-->
 
+**class bindings for template forms
+we can disable elements for example if form is not dirty like: [disabled]="!editForm.dirty"
 
 
 
