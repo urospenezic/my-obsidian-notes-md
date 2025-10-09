@@ -10,7 +10,7 @@ Layout:
 { path: 'someRoute/:query', component: component }, -> like baseUrl/someRoute/query
 
 
-routes are accessed via the top level `<router-outlet>` usually residing within app.html. so the `<router-outlet>` is replaces with whatever content/component is described at a certain URL route in app.routes.ts
+routes are accessed via the top level `<router-outlet>` usually residing within app.html. so the `<router-outlet>` is replaces with whatever content/component is described at a certain URL route in app.routes.ts These outlets are used to acces child routes as well (so we can display a custom child route that can even take a part of the parent component, not the full thing)
 
  `protected router = inject(Router); with imported RouterOutlet`
 
@@ -238,3 +238,59 @@ and just use that on click
 
 
 **ROUTERLINKACTIVE in HTML binds to a css class that will activate if the specified route is active. Ofc required routerLink=path as well
+
+*NESTED ROUTING*
+--
+
+{
+
+path: 'members/:id',
+
+component: MemberDetail,
+
+children: [
+
+{ path: '', redirectTo: 'profile', pathMatch: 'full' },
+
+{ path: 'profile', component: MemberProfile, title: 'Profile' },
+
+{ path: 'photos', component: MemberPhotos, title: 'Photos' },
+
+{ path: 'messages', component: MemberMessages, title: 'Messages' },
+
+],
+
+},
+
+the first empty route is used as fallback a default/fallback. pathMatch full means that router will not stop checking the url from left to right and stop at the first accurance of passed segment.
+
+
+**ROUTER EVENTS (OBSERVABLES)
+We can listen to router events like: Router.events() : 
+ngOnInit(): void {
+this.member$ = this.loadMember();
+this.title.set(this.route.firstChild?.snapshot.title|| 'Profile');
+this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+this.title.set(this.route.firstChild?.snapshot.title || 'Profile');
+});
+}
+
+
+
+** documentation for other router events
+
+---------------------------------------------------------------------------
+
+**ROUTE RESOLVERS
+
+A way to pass data to child routes, or any routes? It executes just before the route loads up. Can be made by CLI using "ng g r". From CLI help:
+Resolvers are used to pre-fetch data before a route is activated, ensuring that the necessary data is available before the component is displayed. This can improve the user experience by preventing delays and loading states. *IT APPEND -resolver TO THE NAME*. 
+It's a function that looks similar to route guards except it returns ResolveFn<T>. We can actually fetch data inside of these (or go to cache).
+
+To activate a router, we go to routes definitions and add {resolve: {nameOfThingToPass: routeResolver}} to any route definition. We can also add runGuardsAndResolvers: always. read on that in docs
+
+These resolvers return an Observable basically, so we use them in any component like:
+
+ActivatedRoute.data.subscribe({
+next: data => this.propertyOfComponent = data['nameOfThingToPass]
+})
