@@ -291,6 +291,6 @@ To activate a router, we go to routes definitions and add {resolve: {nameOfThing
 
 These resolvers return an Observable basically, so we use them in any component like:
 
-ActivatedRoute.data.subscribe({
+ActivatedRoute.parent.data.subscribe({
 next: data => this.propertyOfComponent = data['nameOfThingToPass]
 })

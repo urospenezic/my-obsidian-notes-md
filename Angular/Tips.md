@@ -15,3 +15,7 @@ we import AsyncPipe and we use it like: @for(item of propertyName$ | async; trac
 
 
 **JSON TO TS websites offer auto generation of models from json responses
+
+--------------
+
+**EXTRA SPACING IN URLS IN MARKUP WILL TRIGGER ANGULARS SECURITY MECHANISM AND MARK THEM AS UNSAFE AND UNABLE TO DISPLAY. SO SRC="{{PHOTO.URL}}" IS FINE, BUT " {PHOTO.URL} " IS NOT

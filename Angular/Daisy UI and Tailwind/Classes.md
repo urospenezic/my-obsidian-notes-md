@@ -32,6 +32,8 @@
 - divider - added to no content div to give us a separator
 - menu
 - rounded box
+- auto-rows
+- overflow-auto
 
 `color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
 
