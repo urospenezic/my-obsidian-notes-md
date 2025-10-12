@@ -19,3 +19,81 @@ we import AsyncPipe and we use it like: @for(item of propertyName$ | async; trac
 --------------
 
 **EXTRA SPACING IN URLS IN MARKUP WILL TRIGGER ANGULARS SECURITY MECHANISM AND MARK THEM AS UNSAFE AND UNABLE TO DISPLAY. SO SRC="{{PHOTO.URL}}" IS FINE, BUT " {PHOTO.URL} " IS NOT
+
+
+-------------------
+
+**generate reusable components for form inputs with validation error display and everything.
+--
+
+<label class="floating-label w-full text-left">
+
+<span class="label-text w-full">{{ label() }}</span>
+
+<input
+
+[type]="type()"
+
+class="input w-full"
+
+[formControl]="control"
+
+[placeholder]="label()"
+
+[class.input-error]="control.touched && control.invalid"
+
+[class.input-success]="control.valid && control.invalid"
+
+/>
+
+@if( control.hasError('required') && control.touched ) {
+
+<div class="text-error text-xs validation-hint">{{ label() }} is required</div>
+
+} @if(control.hasError('email') && control.touched) {
+
+<div class="text-error text-xs validation-hint">Please enter a valid email address</div>
+
+} @if(control.hasError('minlength') && control.touched) {
+
+<div class="text-error text-xs validation-hint">
+
+{{ label() }} must be at least {{ control.getError('minlength').requiredLength }} characters
+
+long (currently {{ control.getError('minlength').actualLength }})
+
+</div>
+
+} @if(control.hasError('passwordMissmatch') && control.touched) {
+
+<div class="text-error text-xs validation-hint">Passwords do not match</div>
+
+}
+
+</label>
+
+
+
+`@Component({`
+`selector: 'app-text-input',`
+`imports: [ReactiveFormsModule],`
+`templateUrl: './text-input.html',`
+`styleUrl: './text-input.css',`
+`})`
+`export class TextInput implements ControlValueAccessor {`
+`//ControlValueAccessor tells angular this is a form control`
+`label = input<string>('');`
+`type = input<string>('text'); //text, password, email, etc`
+`//@Self() tells the angular to only look up the ref we're injecting on the current element, not to seach it up the injector tree`
+`//it guarntees that this control is unique for this text input we use inside of form`
+`constructor(@Self() public ngControl: NgControl) {`
+`ngControl.valueAccessor = this; //bind this control value accessor to the ngControl`
+`}` 
+`writeValue(value: any): void {}`
+`registerOnChange(fn: any): void {}`
+`registerOnTouched(fn: any): void {}`
+`get control() {`
+`return this.ngControl.control as FormControl;`
+`}`
+`}`
+

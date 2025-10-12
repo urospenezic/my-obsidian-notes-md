@@ -42,9 +42,12 @@ themes: all;
 in styles.css
 
 
+**Components to check
+--
 
-
-
+- steps
+- dropdown
+- 
 
 
 
