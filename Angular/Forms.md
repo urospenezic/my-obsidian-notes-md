@@ -117,3 +117,7 @@ registerForm.controls['displayName'].invalid ) {
 
 </label>
 
+**Step forms
+--
+
+Check the course-project DatingApp registration form
