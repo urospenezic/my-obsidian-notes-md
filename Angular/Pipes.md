@@ -23,3 +23,8 @@ ng g p
 `}`
 
 We using withg ' | ' syntax, so like {{user.joinDate | date:'long date'}}
+
+---------------------
+**Known pipes
+
+AsyncPipe, DatePipe
