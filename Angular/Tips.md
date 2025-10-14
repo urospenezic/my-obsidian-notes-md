@@ -97,3 +97,7 @@ long (currently {{ control.getError('minlength').actualLength }})
 `}`
 `}`
 
+
+--------------------------------------------------
+
+**ON LINUX CHANGE DEVELOPMENT ENVIRONMENT URL TO apiUrl: 'https://127.0.0.1:7241/api' INSTEAD OF LOCALHOST BECAUSE LINUX CANNOT AUTO SWITCH BETWEEN IPV4 AND V6

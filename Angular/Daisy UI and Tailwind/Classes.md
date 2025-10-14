@@ -36,6 +36,8 @@
 - overflow-auto
 - self- -> self positioning (self-end -> end of flex row/column)
 - step -> daisy ui steps
+- modal -> popup
+- hidden -> self explained, can be bound [hidden]="conditionSignal()"
 
 `color-base-100` refers to a semantic CSS variable, common in UI frameworks . The exact color is theme-dependent, allowing for light and dark modes, but it serves as the base for the page background, with subsequent colors designed to provide contrast for foreground elements.
 

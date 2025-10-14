@@ -47,7 +47,7 @@ in styles.css
 
 - steps
 - dropdown
-- 
+- modal - popup basically. useful for edits like filtering
 
 
 
