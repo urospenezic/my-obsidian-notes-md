@@ -1,7 +1,7 @@
 
 Same as LINQ def execution. Basically any query that does not go through select stage (like select statement or toList() or anything that will force the select to go off) is stored in IQueryable<T/>. We can pass this around and execute when needed 
 
-ExecuteUpdateAsync - newer method. Asynchronously updates database rows for the entity instances which match the LINQ query from the database. This operation executes immediately against the database, rather than being deferred until DbContext.SaveChanges() is called, example of usage below:
+ExecuteUpdateAsync - newer method. Asynchronously updates database rows for the entity instances which match the LINQ query from the database. This operation executes immediately against the database, rather than being deferred until DbContext.SaveChanges() is called. It is also useful because it matches a LINQ query, so it won't actually retrieve from db (in case below members). example of usage below:
 
 ```
 public class LogUserActivity : IAsyncActionFilter
