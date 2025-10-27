@@ -259,3 +259,36 @@ this.loadMembers();
 
 } }
 ```
+
+
+**KEEP IN MIND THAT DELETION CAN GET TRICKY ON THE CLIENT SIDE FOR PAGINATED RESULTS. EXAMPLE:
+
+deleteMessage(id: string) {
+    this.messageService.deleteMessage(id).subscribe({
+      next: () => {
+        const current = this.messages();
+        if (current?.items) {
+          this.messages.update((prev) => {
+            if (!prev || !prev.metadata) return null;
+            const newItems = prev.items?.filter((x) => x.id !== id) || [];
+            const newMetadata = {
+              ...prev.metadata,
+              totalCount: prev.metadata.totalCount - 1,
+              totalPages: Math.max(
+                1,
+                Math.ceil((prev.metadata.totalCount - 1) / prev.metadata.pageSize)
+              ),
+              currentPage: Math.min(
+                prev.metadata.currentPage,
+                Math.max(1, Math.ceil((prev.metadata.totalCount - 1) / prev.metadata.pageSize))
+              ),
+            };
+            return {
+              items: newItems,
+              metadata: newMetadata,
+            };
+          });
+        }
+      },
+    });
+  }

@@ -101,3 +101,40 @@ long (currently {{ control.getError('minlength').actualLength }})
 --------------------------------------------------
 
 **ON LINUX CHANGE DEVELOPMENT ENVIRONMENT URL TO apiUrl: 'https://127.0.0.1:7241/api' INSTEAD OF LOCALHOST BECAUSE LINUX CANNOT AUTO SWITCH BETWEEN IPV4 AND V6
+
+------------------
+
+**SCROLL TO BOTTOM:
+
+<div #messageEndRef></div> place a div like this at the bottom of the thread (chat thread, content thread that keeps updating, whatever)
+
+Give it a reference in component ts:
+  @ViewChild('messageEndRef') messageEndRef!: ElementRef;
+  
+And finally:
+
+ scrollToBottom() {
+    //set timeout to ensure that the current js call stack is cleared before scrolling
+    setTimeout(() => {
+      try {
+        if (this.messageEndRef) {
+          this.messageEndRef.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      } catch (err) {
+        console.error('Scroll to bottom failed:', err);
+      }
+    });
+  }
+  
+  
+  And we use this via effect:
+  
+    constructor() {
+    effect(() => {
+      const currentMessages = this.messages();
+      if (currentMessages.length > 0) {
+        this.scrollToBottom();
+      }
+    });
+  }
+ 

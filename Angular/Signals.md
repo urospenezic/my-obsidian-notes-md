@@ -15,3 +15,5 @@ input() is a signal that stores data passed from parent compoennts
 output() -> signal that's supposed to be emitted up the visual tree
 
 model() -> signal that's an input, but we can write to it (so like 2way)
+
+effect() -> Registers an "effect" that will be scheduled & executed whenever the signals that it reads changes. Read the docs
