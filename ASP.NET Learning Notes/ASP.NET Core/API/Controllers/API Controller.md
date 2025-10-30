@@ -33,3 +33,17 @@ npm init + npm install to get npm into asp.net project. Make sure to install in 
 **OR USE ODETOCODE NuGet that allows for app.UseNodeModules() middleware
 
 
+**Result via model state:
+
+ModelState is available to any controller. 
+
+`if (!result.Succeeded)`
+        `{`
+            `foreach (var error in result.Errors)`
+            `{`
+                `ModelState.AddModelError(error.Code, error.Description);`
+            `}`
+            `return ValidationProblem();`
+        `}`
+
+

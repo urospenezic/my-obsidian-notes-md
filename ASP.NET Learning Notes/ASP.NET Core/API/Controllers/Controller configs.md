@@ -9,3 +9,6 @@
 [FromForm] inside of controller endpoint params -> specifies that the endpoint only accepts param if it was passed inside of form-data object in body. In Angular we got FormData class to populate with form data.
 
 [FromQuery] -> specifies that params are to be received via query params
+
+
+[Authorize(Roles =)] can be used to guard against identity roles 
